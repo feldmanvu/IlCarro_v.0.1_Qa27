@@ -27,6 +27,6 @@ public class ApplicationManager {
         car = new CarHelper(wd);
     }
     public void stop(){
-        wd.quit();
+       // wd.quit();
     }
 }

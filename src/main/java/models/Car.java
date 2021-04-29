@@ -6,11 +6,14 @@ public class Car {
     String model;
     String year;
     String engine;
+    String fuel;
+    String gear;
+    String wd;
     String doors;
     String seats;
     String carClass;
     String fuelConsumption;
-    String carRegistrationNumber;
+    String carRegNum;
     String price;
     String distanceIncluded;
     String features;
@@ -41,6 +44,21 @@ public class Car {
         return this;
     }
 
+    public Car withFuel(String fuel) {
+        this.fuel = fuel;
+        return this;
+    }
+
+    public Car withGear(String gear) {
+        this.gear = gear;
+        return this;
+    }
+
+    public Car withWd(String wd) {
+        this.wd = wd;
+        return this;
+    }
+
     public Car withDoors(String doors) {
         this.doors = doors;
         return this;
@@ -61,8 +79,8 @@ public class Car {
         return this;
     }
 
-    public Car withCarRegistrationNumber(String carRegistrationNumber) {
-        this.carRegistrationNumber = carRegistrationNumber;
+    public Car withCarRegNum(String carRegNum) {
+        this.carRegNum = carRegNum;
         return this;
     }
 
@@ -76,15 +94,6 @@ public class Car {
         return this;
     }
 
-    public Car withFeatures(String features) {
-        this.features = features;
-        return this;
-    }
-
-    public Car withAbout(String about) {
-        this.about = about;
-        return this;
-    }
 
     public String getLocation() {
         return location;
@@ -106,6 +115,18 @@ public class Car {
         return engine;
     }
 
+    public String getFuel() {
+        return fuel;
+    }
+
+    public String getGear() {
+        return gear;
+    }
+
+    public String getWd() {
+        return wd;
+    }
+
     public String getDoors() {
         return doors;
     }
@@ -122,8 +143,8 @@ public class Car {
         return fuelConsumption;
     }
 
-    public String getCarRegistrationNumber() {
-        return carRegistrationNumber;
+    public String getCarRegNum() {
+        return carRegNum;
     }
 
     public String getPrice() {
@@ -134,11 +155,5 @@ public class Car {
         return distanceIncluded;
     }
 
-    public String getFeatures() {
-        return features;
-    }
 
-    public String getAbout() {
-        return about;
-    }
 }

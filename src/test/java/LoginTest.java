@@ -7,17 +7,19 @@ import org.testng.annotations.Test;
 public class LoginTest extends TestBase {
     @BeforeMethod
     public void precondirion(){
-        app.user().logout();
+        if(app.user().islogged()){
+            app.user().logout();
+        }
     }
     @Test
     public void loginTest(){
 
-        app.user().opegLoginForm();
+        app.user().openLoginForm();
         app.user().fillLoginForm(new User().withEmail("marsh@gmail.com").withPassword("Marsh1234$"));
         app.user().clickLoginButton();
         app.user().pause(2000);
         app.user().successLogin();
-        Assert.assertTrue(app.user().isLogged());
+        Assert.assertTrue(app.user().islogged());
 
 
     }

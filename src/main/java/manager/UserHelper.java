@@ -11,13 +11,14 @@ public class UserHelper extends HelperBase{
     }
 
 
-    public void opegLoginForm() {
+    public void openLoginForm() {
         click(By.xpath("//a[text()=' Log in ']"));
     }
 
 
+
     public void fillLoginForm(User user) {
-        type(By.id("email"),user.getEmail());
+        type(By.id("email"), user.getEmail());
         type(By.id("password"), user.getPassword());
     }
 
@@ -28,13 +29,21 @@ public class UserHelper extends HelperBase{
     public void successLogin() {
         click(By.xpath("//button[text()='Ok']"));
     }
-
-    public boolean isLogged(){
-        isElementPresent(By.xpath("//a[text()=' Logout ']"));
-        return true;
+    public boolean islogged(){
+        return isElementPresent(By.xpath("//a[text()=' Logout ']"));
     }
 
     public void logout() {
         click(By.xpath("//a[text()=' Logout ']"));
+    }
+
+
+    public void login() {
+
+        openLoginForm();
+        fillLoginForm(new User().withEmail("marsh@gmail.com").withPassword("Marsh1234$"));
+        clickLoginButton();
+        pause(2000);
+        successLogin();
     }
 }
